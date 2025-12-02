@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Hostel — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="card-top">
+        <div class="logo-circle" aria-hidden="true">🏠</div>
+        <h1 class="brand">Smart Hostel</h1>
+        <p class="sub">Attendance Management System</p>
+      </div>
+
+      <form id="loginForm" class="form" autocomplete="off" novalidate>
+        <div class="form-row">
+          <label for="loginAs">Login As</label>
+          <select id="loginAs" name="loginAs" class="control">
+            <option value="student">student</option>
+            <option value="admin">admin</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="email">E-mail / University ID</label>
+          <div class="input-group">
+            <span class="input-icon" aria-hidden="true">📧</span>
+            <input id="email" name="email" class="control" type="text" placeholder="E-mail / University ID" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <span class="input-icon" aria-hidden="true">🔒</span>
+            <input id="password" name="password" class="control" type="password" placeholder="Password" required>
+          </div>
+        </div>
+
+        <div class="form-row options-row">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="remember" name="remember">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" class="btn">Login</button>
+        </div>
+
+        <p class="register">Not registered? <a href="#">Register here</a></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
