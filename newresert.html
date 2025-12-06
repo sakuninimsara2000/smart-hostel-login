@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="newresetcss.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="card-top">
+        <div class="icon-circle">🔑</div>
+        <h1>Reset Password</h1>
+        <p>Enter your email to receive a reset link</p>
+      </div>
+
+      <form id="resetForm" class="form">
+        <div class="form-row">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <span class="input-icon">📧</span>
+            <input type="email" id="email" class="control" placeholder="Enter your email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary-btn">
+            🔄 Send Reset Link
+          </button>
+        </div>
+
+        <div class="form-row">
+          <button type="button" class="btn secondary-btn" onclick="goLogin()">
+            ← Back to Login
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="newresetjs.js"></script>
+</body>
+</html>
