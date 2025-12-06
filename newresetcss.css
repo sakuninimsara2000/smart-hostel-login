@@ -1,0 +1,107 @@
+:root {
+  --primary: #1f6d5a;
+  --secondary: #e0e0ff;
+  --bg: #f9f9f9;
+  --text: #2a2a2a;
+  --muted: #f1f3f6;
+  --radius: 8px;
+  --control-height: 44px;
+  --card-pad: 32px;
+  --btn-gap: 16px;
+}
+
+* { box-sizing: border-box; }
+body, html { margin: 0; height: 100%; font-family: 'Poppins', sans-serif; background: var(--bg); }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+.fade-out { animation: fadeOut 0.5s forwards; }
+@keyframes fadeOut { to { opacity: 0; } }
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--card-pad);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  transform: translateY(20px);
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp { to { transform: translateY(0); } }
+
+.card-top .icon-circle {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+}
+
+.card-top h1 { margin: 8px 0; font-size: 20px; font-weight: 600; color: var(--text); }
+.card-top p { margin: 0 0 24px 0; font-size: 14px; color: #555; }
+
+.form-row { margin-bottom: var(--btn-gap); text-align: left; }
+
+label { display: block; font-size: 13px; margin-bottom: 6px; font-weight: 500; color: #333; }
+
+.input-group { position: relative; }
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.control {
+  width: 100%;
+  height: var(--control-height);
+  padding: 10px 12px 10px 40px;
+  border-radius: var(--radius);
+  border: 1px solid #d6d6d6;
+  background: var(--muted);
+  font-size: 14px;
+  outline: none;
+}
+.control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.1); }
+
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover { opacity: 0.95; }
+
+.primary-btn { background: var(--primary); color: #fff; gap: 8px; }
+.secondary-btn { background: var(--secondary); color: var(--primary); }
+
+.btn-icon { font-size: 18px; }
+.btn:active { transform: translateY(1px); }
