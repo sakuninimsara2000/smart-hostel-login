@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="header">
+            <div class="user-icon"><i class="fas fa-user-plus"></i></div>
+            <h1>Student Registration</h1>
+            <p>University of Ruhuna</p>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step active" data-step="1">
+                <div class="number">1</div>
+                <div class="label">Personal</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="2">
+                <div class="number">2</div>
+                <div class="label">Hostel</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="3">
+                <div class="number">3</div>
+                <div class="label">Confirm</div>
+            </div>
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-step active" id="step-1">
+                <h2>Personal Details</h2>
+
+                <div class="form-group">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="uniId">University ID</label>
+                    <input type="text" id="uniId" placeholder="eg : HS/20/----/----" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your.email@university.edu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="0711-111111" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="faculty">Faculty / Department</label>
+                    <select id="faculty" required>
+                        <option value="" disabled selected>Select your Faculty</option>
+                        <option value="f1">Faculty of Engineering</option>
+                        <option value="f2">Faculty of Science</option>
+                        <option value="f3">Faculty of Medicine</option>
+                        <option value="f4">Faculty of Agriculture</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-back" onclick="window.location.href='login.html'">Back to Login</button>
+                    <button type="button" class="btn btn-next" data-next-step="2">Next</button>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-2">
+                <h2>Hostel Details</h2>
+                <div class="form-group"><p>Hostel content goes here...</p></div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-back" data-prev-step="1">Back</button>
+                    <button type="button" class="btn btn-next" data-next-step="3">Next</button>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-3">
+                <h2>Confirm Registration</h2>
+                <div class="form-group"><p>Confirmation summary goes here...</p></div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-back" data-prev-step="2">Back</button>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
