@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration - University of Ruhuna</title>
+    <link rel="stylesheet" href="adminReg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">👥+</div>
+            <h1>Admin Registration</h1>
+            <p class="subtitle">University of Ruhuna</p>
+        </div>
+
+        <div class="progress-bar">
+            <div class="step active">
+                <div class="step-number">1</div>
+                <div class="step-label">Personal</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-label">User</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-label">Confirm</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2 class="section-title">Personal Details</h2>
+            
+            <div class="form-group">
+                <label for="fullname">Full name</label>
+                <input type="text" id="fullname" placeholder="Enter your full Name">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <div class="date-input">
+                    <input type="text" id="dob" placeholder="mm/dd/yyyy" onfocus="(this.type='date')">
+                    <span class="date-icon">📅</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your.email@university.edu">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="0711-111111">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not">Prefer not to say</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="btn-secondary" onclick="backToLogin()">Back to Login</button>
+            <button type="button" class="btn-primary" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+
+    <script src="adminr.js"></script>
+</body>
+</html>
