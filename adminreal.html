@@ -24,23 +24,22 @@
     <aside class="sidebar">
         <div class="brand">
             <div class="brand-text">
-                <h3>Admin Panel</h3>
-                <p>Smart Hostel</p>
+                <h3 id="brandTitle">Admin Panel</h3>
+                <p id="brandSubtitle">Smart Hostel</p>
             </div>
         </div>
 
         <ul class="menu">
-            <li class="active"><a href="admin.html"><i class="fas fa-th"></i>Dashboard</a></li>
-            <li><a href="adminstudent.html"><i class="fas fa-fingerprint"></i>Smart Attendance</a></li>
-            <li><a href="adminroom.html"><i class="fas fa-bed"></i>Room Management</a></li>
-            <li><a href="adminstudent01.html"><i class="fas fa-user-graduate"></i>Student</a></li>
-            <li><a href="adminreports.html"><i class="fas fa-chart-bar"></i>Reports</a></li>
-            <li><a href="admininvite.html"><i class="fas fa-th"></i>Invitation</a></li>
-            <li><a href="adminaccount.html"><i class="fas fa-user"></i>Account</a></li>
-           
+            <li class="active"><a href="admin.html" id="menuDashboard"><i class="fas fa-th"></i>Dashboard</a></li>
+            <li><a href="adminstudent.html" id="menuAttendance"><i class="fas fa-fingerprint"></i>Smart Attendance</a></li>
+            <li><a href="adminroom.html" id="menuRooms"><i class="fas fa-bed"></i>Room Management</a></li>
+            <li><a href="adminstudent01.html" id="menuStudents"><i class="fas fa-user-graduate"></i>Student</a></li>
+            <li><a href="adminreports.html" id="menuReports"><i class="fas fa-chart-bar"></i>Reports</a></li>
+            <li><a href="admininvite.html" id="menuInvitations"><i class="fas fa-th"></i>Invitation</a></li>
+            <li><a href="adminaccount.html" id="menuAccount"><i class="fas fa-user"></i>Account</a></li>
         </ul>
 
-        <!--  Logout Button with ID -->
+        <!-- Logout Button with ID -->
         <div class="logout">
             <a href="loggedout.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
@@ -49,15 +48,15 @@
     <!-- Main Content -->
     <main class="content">
         <div class="main-header">
-            <h1>Dashboard</h1>
-            <p>Welcome back! Here's what's happening at your hostel today.</p>
+            <h1 id="dashboardTitle">Dashboard</h1>
+            <p id="dashboardSubtitle">Welcome back! Here's what's happening at your hostel today.</p>
         </div>
 
         <!-- Top Cards -->
         <div class="top-cards">
             <div class="card card-id">
                 <div class="card-body">
-                    <span>Total Students</span>
+                    <span id="labelTotalStudents">Total Students</span>
                     <h3 id="totalStudents">1247</h3>
                 </div>
                 <div class="card-icon blue"><i class="fas fa-user-graduate"></i></div>
@@ -65,7 +64,7 @@
 
             <div class="card card-room">
                 <div class="card-body">
-                    <span>Rooms Available</span>
+                    <span id="labelRoomsAvailable">Rooms Available</span>
                     <h3 id="roomsAvailable">89</h3>
                 </div>
                 <div class="card-icon purple"><i class="fas fa-bed"></i></div>
@@ -73,7 +72,7 @@
 
             <div class="card card-status">
                 <div class="card-body">
-                    <span>Attendance</span>
+                    <span id="labelAttendance">Attendance</span>
                     <h3 id="attendance">94.05%</h3>
                 </div>
                 <div class="card-icon teal"><i class="fas fa-fingerprint"></i></div>
@@ -83,8 +82,8 @@
         <!-- Weekly Attendance Chart -->
         <div class="section-box">
             <div class="section-header">
-                <h4>Weekly Attendance</h4>
-                <a href="#" class="btn-light-blue">View Details</a>
+                <h4 id="weeklyAttendanceTitle">Weekly Attendance</h4>
+                <a href="#" id="viewAttendanceDetailsBtn" class="btn-light-blue">View Details</a>
             </div>
 
             <canvas id="attendanceChart" height="120"></canvas>
