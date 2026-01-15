@@ -20,38 +20,37 @@
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-text">
-          <h3>Admin Panel</h3>
-          <p>Smart Hostel</p>
+          <h3 id="brandTitle">Admin Panel</h3>
+          <p id="brandSubtitle">Smart Hostel</p>
         </div>
       </div>
 
       <ul class="menu">
-        <li><a href="adminreal.html"><i class="fas fa-th"></i>Dashboard</a></li>
-        <li><a href="adminstudent.html"><i class="fas fa-fingerprint"></i>Smart Attendance</a></li>
-        <li><a href="adminroom.html"><i class="fas fa-bed"></i>Room Management</a></li>
-        <li class="active"><a href="adminstudent01.html"><i class="fas fa-user-graduate"></i>Student</a></li>
-        <li><a href="adminreports.html"><i class="fas fa-chart-bar"></i>Reports</a></li>
-        <li><a href="admininvite.html"><i class="fas fa-th"></i>Invitation</a></li>
-        <li><a href="adminaccount.html"><i class="fas fa-user"></i>Account</a></li>
-        
+        <li><a href="adminreal.html" id="menuDashboard"><i class="fas fa-th"></i>Dashboard</a></li>
+        <li><a href="adminstudent.html" id="menuAttendance"><i class="fas fa-fingerprint"></i>Smart Attendance</a></li>
+        <li><a href="adminroom.html" id="menuRooms"><i class="fas fa-bed"></i>Room Management</a></li>
+        <li class="active"><a href="adminstudent01.html" id="menuStudents"><i class="fas fa-user-graduate"></i>Student</a></li>
+        <li><a href="adminreports.html" id="menuReports"><i class="fas fa-chart-bar"></i>Reports</a></li>
+        <li><a href="admininvite.html" id="menuInvitations"><i class="fas fa-th"></i>Invitation</a></li>
+        <li><a href="adminaccount.html" id="menuAccount"><i class="fas fa-user"></i>Account</a></li>
       </ul>
 
       <div class="logout">
-        <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>Logout</a>
       </div>
     </aside>
 
     <!-- Main Content -->
     <main class="content">
       <div class="main-header">
-        <h1>Student Management</h1>
-        <p>View, filter, and update student records</p>
+        <h1 id="studentMgmtTitle">Student Management</h1>
+        <p id="studentMgmtSubtitle">View, filter, and update student records</p>
       </div>
 
       <!-- 🔍 Search & Edit Student Section -->
       <div class="section-box">
         <div class="section-header">
-          <h4>Search Student by ID / Contact</h4>
+          <h4 id="searchHeader">Search Student by ID / Contact</h4>
         </div>
 
         <div class="search-section">
@@ -62,7 +61,7 @@
         <!-- Student Details Card (hidden until found) -->
         <div id="studentCard" class="student-card" style="display:none;">
           <div class="student-header">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle" id="studentAvatar"></i>
             <div>
               <h2 id="sName">—</h2>
               <p id="sFaculty">—</p>
@@ -71,12 +70,12 @@
 
           <div class="student-info">
             <div class="info-item">
-              <label>Room</label>
+              <label for="sRoom">Room</label>
               <input id="sRoom" type="text">
             </div>
 
             <div class="info-item">
-              <label>Status</label>
+              <label for="sStatus">Status</label>
               <select id="sStatus">
                 <option>Active</option>
                 <option>On Leave</option>
@@ -84,12 +83,12 @@
             </div>
 
             <div class="info-item">
-              <label>Attendance</label>
+              <label for="sAttendance">Attendance</label>
               <input id="sAttendance" type="text" readonly>
             </div>
 
             <div class="info-item">
-              <label>Contact</label>
+              <label for="sContact">Contact</label>
               <input id="sContact" type="text">
             </div>
           </div>
@@ -102,59 +101,59 @@
 
       <!-- Summary Cards -->
       <div class="top-cards">
-        <div class="card card-status">
+        <div class="card card-status" id="totalStudentsCard">
           <div class="card-body">
-            <span>Total Students</span>
-            <h3>1,247</h3>
+            <span id="labelTotalStudents">Total Students</span>
+            <h3 id="totalStudents">1,247</h3>
           </div>
-          <div class="card-icon teal"><i class="fas fa-graduation-cap"></i></div>
+          <div class="card-icon teal"><i class="fas fa-graduation-cap" id="totalStudentsIcon"></i></div>
         </div>
 
-        <div class="card card-room">
+        <div class="card card-room" id="activeStudentsCard">
           <div class="card-body">
-            <span>Active Students</span>
-            <h3>1,198</h3>
+            <span id="labelActiveStudents">Active Students</span>
+            <h3 id="activeStudents">1,198</h3>
           </div>
-          <div class="card-icon purple"><i class="fas fa-user"></i></div>
+          <div class="card-icon purple"><i class="fas fa-user" id="activeStudentsIcon"></i></div>
         </div>
 
-        <div class="card card-id">
+        <div class="card card-id" id="onLeaveStudentsCard">
           <div class="card-body">
-            <span>On Leave</span>
-            <h3>89</h3>
+            <span id="labelOnLeaveStudents">On Leave</span>
+            <h3 id="onLeaveStudents">89</h3>
           </div>
-          <div class="card-icon yellow"><i class="fas fa-door-open"></i></div>
+          <div class="card-icon yellow"><i class="fas fa-door-open" id="onLeaveStudentsIcon"></i></div>
         </div>
 
-        <div class="card card-red">
+        <div class="card card-red" id="avgAttendanceCard">
           <div class="card-body">
-            <span>Avg Attendance</span>
-            <h3>91.2%</h3>
+            <span id="labelAvgAttendance">Avg Attendance</span>
+            <h3 id="avgAttendance">91.2%</h3>
           </div>
-          <div class="card-icon red"><i class="fas fa-chart-line"></i></div>
+          <div class="card-icon red"><i class="fas fa-chart-line" id="avgAttendanceIcon"></i></div>
         </div>
       </div>
 
       <!-- Filters -->
       <div class="filter-bar">
         <select id="facultyFilter">
-          <option>All Faculty</option>
-          <option>Science</option>
-          <option>HSS</option>
-          <option>Management</option>
+          <option value="all">All Faculty</option>
+          <option value="science">Science</option>
+          <option value="hss">HSS</option>
+          <option value="management">Management</option>
         </select>
 
         <select id="yearFilter">
-          <option>Years</option>
-          <option>1st Year</option>
-          <option>2nd Year</option>
-          <option>3rd Year</option>
+          <option value="all">Years</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
         </select>
 
         <select id="statusFilter">
-          <option>Status</option>
-          <option>Active</option>
-          <option>On Leave</option>
+          <option value="all">Status</option>
+          <option value="active">Active</option>
+          <option value="leave">On Leave</option>
         </select>
 
         <input type="search" id="searchInput" placeholder="Search Student" />
@@ -174,30 +173,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><i class="fas fa-user-circle" style="color:#3b82f6; font-size:20px;"></i>  Jayani Silva</td>
+          <tr id="student001">
+            <td><i class="fas fa-user-circle" style="color:#3b82f6; font-size:20px;"></i> Jayani Silva</td>
             <td>Science</td>
             <td>Room 101</td>
-            <td><span class="status active">Active</span></td>
-            <td>95.05%</td>
-            <td>071-3651289</td>
+            <td><span class="status active" id="status001">Active</span></td>
+            <td id="attendance001">95.05%</td>
+            <td id="contact001">071-3651289</td>
             <td class="actions">
-              <i class="fas fa-eye"></i>
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
+              <i class="fas fa-eye" id="view001"></i>
+              <i class="fas fa-edit" id="edit001"></i>
+              <i class="fas fa-trash" id="delete001"></i>
             </td>
           </tr>
-          <tr>
-            <td><i class="fas fa-user-circle" style="color:#3b82f6; font-size:20px;"></i>  Nuwan Perera</td>
+          <tr id="student002">
+            <td><i class="fas fa-user-circle" style="color:#3b82f6; font-size:20px;"></i> Nuwan Perera</td>
             <td>Management</td>
             <td>Room 202</td>
-            <td><span class="status leave">On Leave</span></td>
-            <td>82.6%</td>
-            <td>072-2234115</td>
+            <td><span class="status leave" id="status002">On Leave</span></td>
+            <td id="attendance002">82.6%</td>
+            <td id="contact002">072-2234115</td>
             <td class="actions">
-              <i class="fas fa-eye"></i>
-              <i class="fas fa-edit"></i>
-              <i class="fas fa-trash"></i>
+              <i class="fas fa-eye" id="view002"></i>
+              <i class="fas fa-edit" id="edit002"></i>
+              <i class="fas fa-trash" id="delete002"></i>
             </td>
           </tr>
         </tbody>
