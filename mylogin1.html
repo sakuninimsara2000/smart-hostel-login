@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Hostel - Login</title>
+  <link rel="stylesheet" href="loginreset.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="logo-section">
+        <div class="logo-icon">🏢</div>
+        <h1 class="brand-title">Smart Hostel</h1>
+        <p class="brand-subtitle">Attendance Management System</p>
+      </div>
+
+      <div id="alertBox" class="alert"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginAs">Login As</label>
+          <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <select id="loginAs">
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+              <option value="warden">Warden</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email / University ID</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📧</span>
+            <input type="text" id="email" placeholder="Enter your email or ID" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+        </div>
+
+        <div class="options-row">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="myreset.html" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <span>Login</span>
+          <span>→</span>
+        </button>
+
+        <p class="register-text">
+          Don't have an account? <a href="#">Register here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="mylogin3.js"></script>
+</body>
+</html>
