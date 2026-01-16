@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#mainContainer {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
+#headerSection {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#headerIcon {
+    width: 80px;
+    height: 80px;
+    background: #5DADE2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#headerIcon svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+#mainTitle {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+#universityName {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+/* Stepper Section */
+#stepperSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.step.completed .step-number {
+    background: #3498db;
+    color: white;
+    animation: checkmarkPop 0.5s ease-out;
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.step-label {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+#stepperLine {
+    position: absolute;
+    height: 2px;
+    background: #3498db;
+    top: 22px;
+    left: 15%;
+    right: 15%;
+    z-index: 1;
+    animation: lineGrow 1s ease-out;
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+        left: 15%;
+    }
+    to {
+        width: 70%;
+        left: 15%;
+    }
+}
+
+/* Success Section */
+#successSection {
+    text-align: center;
+    padding: 40px 0;
+    margin: 40px 0;
+}
+
+#successIconWrapper {
+    display: inline-block;
+    margin-bottom: 25px;
+    animation: bounceIn 0.8s ease-out 0.3s both;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#successIcon {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 10px 20px rgba(52, 152, 219, 0.3));
+}
+
+#successCircle {
+    fill: #3498db;
+    stroke: none;
+}
+
+#successCheck {
+    fill: none;
+    stroke: white;
+    stroke-width: 2.5;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    animation: drawCheck 0.5s ease-out 0.8s forwards;
+}
+
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#successTitle {
+    font-size: 26px;
+    color: #2c3e50;
+    font-weight: 600;
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Section */
+#buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    animation: fadeInUp 0.6s ease-out 0.7s both;
+}
+
+#loginBtn {
+    padding: 14px 50px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+#loginBtn:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+#loginBtn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+}
+
+/* Confetti Effect */
+@keyframes confetti {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #mainContainer {
+        padding: 30px 20px;
+    }
+
+    #mainTitle {
+        font-size: 24px;
+    }
+
+    #stepperSection {
+        margin: 30px 0;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .step-label {
+        font-size: 12px;
+    }
+
+    #successIcon {
+        width: 100px;
+        height: 100px;
+    }
+
+    #successTitle {
+        font-size: 22px;
+    }
+
+    #loginBtn {
+        padding: 12px 40px;
+        font-size: 15px;
+    }
+}

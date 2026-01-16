@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#mainContainer {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+#headerSection {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#headerIcon {
+    width: 80px;
+    height: 80px;
+    background: #5DADE2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+#headerIcon svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+#mainTitle {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+#universityName {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+/* Stepper Styles */
+#stepperSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background: #3498db;
+    color: white;
+}
+
+.step.completed .step-number {
+    background: #27ae60;
+    color: white;
+}
+
+.step.inactive .step-number {
+    background: #d5d8dc;
+    color: #7f8c8d;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #7f8c8d;
+    transition: color 0.3s ease;
+}
+
+.step.active .step-label,
+.step.completed .step-label {
+    color: #2c3e50;
+}
+
+#stepperLine {
+    position: absolute;
+    height: 2px;
+    background: #d5d8dc;
+    top: 22px;
+    left: 15%;
+    right: 15%;
+    z-index: 1;
+}
+
+#stepperLineProgress {
+    position: absolute;
+    height: 2px;
+    background: #3498db;
+    top: 22px;
+    left: 15%;
+    width: 29%;
+    z-index: 1;
+    transition: width 0.5s ease;
+}
+
+/* Form Section */
+#formSection {
+    margin-top: 30px;
+}
+
+#sectionTitle {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d5d8dc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-input::placeholder {
+    color: #bdc3c7;
+}
+
+/* Select Dropdown */
+#hostelSelectWrapper {
+    position: relative;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 40px;
+    border: 1px solid #d5d8dc;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #7f8c8d;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #3498db;
+    color: #2c3e50;
+}
+
+.form-select option {
+    color: #2c3e50;
+}
+
+#hostelArrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    color: #7f8c8d;
+}
+
+#hostelArrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Password Input */
+#passwordWrapper,
+#confirmPasswordWrapper {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lock-icon {
+    width: 20px;
+    height: 20px;
+    color: #7f8c8d;
+    transition: color 0.3s;
+}
+
+.password-toggle:hover .lock-icon {
+    color: #3498db;
+}
+
+/* Buttons */
+#buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-secondary,
+.btn-primary {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+#backBtn {
+    background: white;
+    color: #7f8c8d;
+    border: 2px solid #d5d8dc;
+}
+
+#backBtn:hover {
+    background: #f8f9fa;
+    border-color: #bdc3c7;
+}
+
+#nextBtn {
+    background: #3498db;
+    color: white;
+}
+
+#nextBtn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Animation for validation errors */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error {
+    animation: shake 0.3s;
+}
+
+.error .form-input,
+.error .form-select {
+    border-color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #mainContainer {
+        padding: 30px 20px;
+    }
+
+    #mainTitle {
+        font-size: 24px;
+    }
+
+    #stepperSection {
+        margin: 30px 0;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #buttonGroup {
+        flex-direction: column;
+    }
+}
